@@ -11,8 +11,8 @@ public class Reclamation {
     private LocalDateTime dateResolution;
 
     // Constructeur
-    public Reclamation(int id, int commandeId, String description, StatutReclamation statut, LocalDateTime dateCreation, LocalDateTime dateResolution) {
-        this.id = id;
+    public Reclamation( int commandeId, String description, StatutReclamation statut, LocalDateTime dateCreation, LocalDateTime dateResolution) {
+
         this.commandeId = commandeId;
         this.description = description;
         this.statut = statut;

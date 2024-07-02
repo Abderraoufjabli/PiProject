@@ -10,8 +10,8 @@ public class Livraison {
     private LocalDateTime dateLivraison;
 
     // Constructeur
-    public Livraison(int id, int commandeId, int livreurId, StatutLivraison statut, LocalDateTime dateLivraison) {
-        this.id = id;
+    public Livraison( int commandeId, int livreurId, StatutLivraison statut, LocalDateTime dateLivraison) {
+
         this.commandeId = commandeId;
         this.livreurId = livreurId;
         this.statut = statut;
