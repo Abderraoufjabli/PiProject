@@ -8,17 +8,30 @@ public class Livraison {
     private int livreurId;
     private StatutLivraison statut;
     private LocalDateTime dateLivraison;
+    private LocalDateTime dateMiseAJour;
 
     // Constructeur
-    public Livraison( int commandeId, int livreurId, StatutLivraison statut, LocalDateTime dateLivraison) {
+
+    public Livraison( int commandeId, int livreurId, StatutLivraison statut,
+                     LocalDateTime dateLivraison, LocalDateTime dateMiseAJour) {
 
         this.commandeId = commandeId;
         this.livreurId = livreurId;
         this.statut = statut;
         this.dateLivraison = dateLivraison;
+        this.dateMiseAJour = dateMiseAJour;
     }
 
-    // Getters et Setters
+    public Livraison(int id, int commandeId, int livreurId, StatutLivraison statut,
+                     LocalDateTime dateLivraison, LocalDateTime dateMiseAJour) {
+        this.id = id;
+        this.commandeId = commandeId;
+        this.livreurId = livreurId;
+        this.statut = statut;
+        this.dateLivraison = dateLivraison;
+        this.dateMiseAJour = dateMiseAJour;
+    }
+// Getters et Setters
 
     public int getId() {
         return id;
@@ -48,6 +61,14 @@ public class Livraison {
         return statut;
     }
 
+    public LocalDateTime getDateMiseAJour() {
+        return dateMiseAJour;
+    }
+
+    public void setDateMiseAJour(LocalDateTime dateMiseAJour) {
+        this.dateMiseAJour = dateMiseAJour;
+    }
+
     public void setStatut(StatutLivraison statut) {
         this.statut = statut;
     }
@@ -62,6 +83,7 @@ public class Livraison {
 
     // Méthode toString pour affichage
 
+
     @Override
     public String toString() {
         return "Livraison{" +
@@ -70,6 +92,7 @@ public class Livraison {
                 ", livreurId=" + livreurId +
                 ", statut=" + statut +
                 ", dateLivraison=" + dateLivraison +
+                ", dateMiseAJour=" + dateMiseAJour +
                 '}';
     }
 }

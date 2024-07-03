@@ -27,8 +27,9 @@ public class serviceReclamation implements IService<Reclamation> {
 
     @Override
     public void create(Reclamation reclamation) {
-        String query = "INSERT INTO reclamations (utilsateur_id, commande_id,description, statut, date_creation, date_resolution) VALUES (?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement pst = connection.prepareStatement(query)) {
+        String query = "INSERT INTO reclamations (utilsateur_id, commande_id,description, " +
+                "statut, date_creation, date_resolution) VALUES (?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement pst = connection.prepareStatement("query")) {
             pst.setInt(1,reclamation.getUtilisateurId());
             pst.setInt(2,reclamation.getCommandeId());
             pst.setString(3,reclamation.getDescription());
@@ -51,7 +52,8 @@ public class serviceReclamation implements IService<Reclamation> {
     @Override
     public void update(Reclamation reclamation) {
         String query="update reclamations SET utilisateur_id=?, commande_id=?," +
-                " description=?, statut=?, date_creation=?, date_resolution=?";
+                " description=?, statut=?, date_creation=?, date_resolution=?" +
+                " where reclamation_id=?";
 
         try {
             PreparedStatement pst=connection.prepareStatement(query);
@@ -61,6 +63,7 @@ public class serviceReclamation implements IService<Reclamation> {
             pst.setString(4,reclamation.getStatut().toString());
             pst.setTimestamp(5,Timestamp.valueOf(reclamation.getDateCreation()));
             pst.setTimestamp(6,Timestamp.valueOf(reclamation.getDateResolution()));
+            pst.setInt(7,reclamation.getId());
             pst.executeUpdate();
 
 
@@ -102,6 +105,15 @@ public class serviceReclamation implements IService<Reclamation> {
 
     @Override
     public void delete(Reclamation reclamation) {
+        String query="delete from Reclamations where reclamation_id=? ";
+
+        try {
+            PreparedStatement pst=connection.prepareStatement(query);
+            pst.setInt(1,reclamation.getId());
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
