@@ -21,6 +21,16 @@ public class Reclamation {
         this.dateResolution = dateResolution;
     }
 
+    public Reclamation(int id,int utilisateurId, int commandeId, String description,  StatutReclamation statut, LocalDateTime dateCreation, LocalDateTime dateResolution) {
+        this.id = id;
+        this.commandeId = commandeId;
+        this.description = description;
+        this.utilisateurId = utilisateurId;
+        this.statut = statut;
+        this.dateCreation = dateCreation;
+        this.dateResolution = dateResolution;
+    }
+
     // Getters et Setters
 
     public int getId() {

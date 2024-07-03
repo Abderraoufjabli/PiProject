@@ -50,7 +50,8 @@ public class serviceReclamation implements IService<Reclamation> {
 
     @Override
     public void update(Reclamation reclamation) {
-        String query="update reclamations SET utilisateur_id=?, commande_id=?, description=?, statut=?, date_creation=?, date_resolution=?"
+        String query="update reclamations SET utilisateur_id=?, commande_id=?," +
+                " description=?, statut=?, date_creation=?, date_resolution=?";
 
         try {
             PreparedStatement pst=connection.prepareStatement(query);
@@ -81,11 +82,13 @@ public class serviceReclamation implements IService<Reclamation> {
 
             while(rs.next())
             { Reclamation reclamation=new Reclamation(rs.getInt("utilisateur_id"),
+                    rs.getInt("reclamation_id"),
                     rs.getInt("commande_id"),
                     rs.getString("description"),
                     StatutReclamation.valueOf(rs.getString("statut")),
                     rs.getTimestamp("date_creation").toLocalDateTime(),
                     rs.getTimestamp("date_resolution").toLocalDateTime());
+
                 recl.add(reclamation);
 
             }
