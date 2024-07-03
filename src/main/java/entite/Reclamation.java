@@ -6,13 +6,14 @@ public class Reclamation {
     private int id;
     private int commandeId;
     private String description;
+    private int utilisateurId;
     private StatutReclamation statut;
     private LocalDateTime dateCreation;
     private LocalDateTime dateResolution;
 
     // Constructeur
-    public Reclamation( int commandeId, String description, StatutReclamation statut, LocalDateTime dateCreation, LocalDateTime dateResolution) {
-
+    public Reclamation( int utilisateurId,int commandeId, String description, StatutReclamation statut, LocalDateTime dateCreation, LocalDateTime dateResolution) {
+        this.utilisateurId=utilisateurId;
         this.commandeId = commandeId;
         this.description = description;
         this.statut = statut;
@@ -28,6 +29,15 @@ public class Reclamation {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getUtilisateurId()
+    {
+        return utilisateurId;
+    }
+    public void setUtilisateurId(int utilisateurId)
+    {
+        this.utilisateurId=utilisateurId;
     }
 
     public int getCommandeId() {
@@ -76,6 +86,7 @@ public class Reclamation {
     public String toString() {
         return "Reclamation{" +
                 "id=" + id +
+                ", utilisateurId="+ utilisateurId +
                 ", commandeId=" + commandeId +
                 ", description='" + description + '\'' +
                 ", statut=" + statut +

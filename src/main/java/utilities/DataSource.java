@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DataSource {
 
 
-    private Connection connexion;
+    private Connection connection;
     private String url="jdbc:mysql://localhost:3306/easyhealth";
     private String login="root";
     private String password="";
@@ -15,7 +15,7 @@ public class DataSource {
 
     public DataSource() throws SQLException
     {
-        connexion= DriverManager.getConnection(url,login,password);
+        connection= DriverManager.getConnection(url,login,password);
         System.out.println("connexion etablie");
 
 
@@ -23,6 +23,6 @@ public class DataSource {
 
     public Connection getConnexion()
     {
-        return connexion;
+        return connection;
     }
 }
