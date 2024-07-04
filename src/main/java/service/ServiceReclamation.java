@@ -5,16 +5,15 @@ import entite.StatutReclamation;
 import utilities.DataSource;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class serviceReclamation implements IService<Reclamation> {
+public class ServiceReclamation implements IService<Reclamation> {
     DataSource dataSource;
     Connection connection;
 
 
-    public serviceReclamation()
+    public ServiceReclamation()
     {
         try {
             dataSource=new DataSource();

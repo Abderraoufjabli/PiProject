@@ -5,14 +5,13 @@ import entite.StatutLivraison;
 import utilities.DataSource;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class serviceLivraison implements IService<Livraison>{
+public class ServiceLivraison implements IService<Livraison>{
     Connection connection;
     DataSource dataSource;
-    public serviceLivraison() {
+    public ServiceLivraison() {
         try {
             DataSource dataSource=new DataSource();
             connection=dataSource.getConnexion();
