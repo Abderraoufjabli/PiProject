@@ -26,20 +26,61 @@ public class ServiceReclamation implements IService<Reclamation> {
 
     @Override
     public void create(Reclamation reclamation) {
-        String query = "INSERT INTO reclamations (utilsateur_id, commande_id,description, " +
+        String query = "INSERT INTO reclamations (utilisateur_id, commande_id,description, " +
                 "statut, date_creation, date_resolution) VALUES (?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement pst = connection.prepareStatement("query")) {
-            pst.setInt(1,reclamation.getUtilisateurId());
-            pst.setInt(2,reclamation.getCommandeId());
-            pst.setString(3,reclamation.getDescription());
-            pst.setString(4,reclamation.getStatut().toString());
-            pst.setTimestamp(5,Timestamp.valueOf(reclamation.getDateCreation()));
-            pst.setTimestamp(6,Timestamp.valueOf(reclamation.getDateResolution()));
-//
-            pst.executeUpdate();
+
+        PreparedStatement pst = null;
+        try {
+            pst = connection.prepareStatement(query);
         } catch (SQLException e) {
-            e.getMessage();
+            throw new RuntimeException(e);
         }
+
+        try {
+            pst.setInt(1,reclamation.getUtilisateurId());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            pst.setInt(2,reclamation.getCommandeId());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            pst.setString(3,reclamation.getDescription());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            pst.setString(4,reclamation.getStatut().toString());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            pst.setTimestamp(5,Timestamp.valueOf(reclamation.getDateCreation()));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            pst.setTimestamp(6,Timestamp.valueOf(reclamation.getDateResolution()));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        int rowsInserted= 0;
+        try {
+            rowsInserted = pst.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        if(rowsInserted>0){
+                System.out.println("A new reclamationis inerted ");
+            }
+            else{
+                System.out.println("no reclamation was inserted");
+                System.out.println();
+            }
+
     }
 
 
@@ -87,7 +128,7 @@ public class ServiceReclamation implements IService<Reclamation> {
                     rs.getInt("reclamation_id"),
                     rs.getInt("commande_id"),
                     rs.getString("description"),
-                    StatutReclamation.valueOf(rs.getString("statut")),
+                    StatutReclamation.valueOf(rs.getString("status")),
                     rs.getTimestamp("date_creation").toLocalDateTime(),
                     rs.getTimestamp("date_resolution").toLocalDateTime());
 

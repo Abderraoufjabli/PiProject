@@ -42,8 +42,8 @@ public class ServiceLivraison implements IService<Livraison>{
 
     @Override
     public void update(Livraison livraison) {
-        String query="update livraions set commande_id=?,livreur_id=? " +
-                ",statut=? ,date_creation=? ,date_mise_a_jour where livraison_id=?";
+        String query="update livraisons set commande_id=?,livreur_id=? " +
+                ",statut=? ,date_creation=? ,date_mise_a_jour=? where livraison_id=?";
 
         try {
             PreparedStatement pstmt=connection.prepareStatement(query);
@@ -53,7 +53,7 @@ public class ServiceLivraison implements IService<Livraison>{
             pstmt.setTimestamp(4,Timestamp.valueOf(livraison.getDateLivraison()));
             pstmt.setTimestamp(5,Timestamp.valueOf(livraison.getDateMiseAJour()));
             pstmt.setInt(6,livraison.getId());
-            pstmt.executeUpdate();
+           pstmt.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

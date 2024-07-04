@@ -31,6 +31,7 @@ public class Livraison {
         this.dateLivraison = dateLivraison;
         this.dateMiseAJour = dateMiseAJour;
     }
+
 // Getters et Setters
 
     public int getId() {

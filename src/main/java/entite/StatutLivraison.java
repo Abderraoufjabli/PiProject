@@ -1,22 +1,9 @@
 package entite;
 
 public enum StatutLivraison {
-    EN_COURS("En cours"),
-    LIVREE("Livrée"),
-    ANNULEE("Annulée");
+    EN_COURS,
+    LIVREE,
+    ANNULEE;
 
-    private final String statut;
 
-    StatutLivraison(String statut) {
-        this.statut = statut;
-    }
-
-    public String getStatut() {
-        return statut;
-    }
-
-    @Override
-    public String toString() {
-        return statut;
-    }
 }
