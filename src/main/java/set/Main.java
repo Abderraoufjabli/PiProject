@@ -12,6 +12,7 @@ import java.sql.SQLOutput;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -35,14 +36,15 @@ public class Main {
 ////        }
 //        serviceLivraison.delete(liv1);
 
-        Reclamation rec=new Reclamation(5,10,"la commande pizza n'espt comme j'ai commnda",
-                StatutReclamation.OUVERTE,LocalDateTime.now(),LocalDateTime.now());
+        Reclamation rec=new Reclamation(5,10,"la commande pizza n'espt comme j'ai commnda");
         System.out.println(rec);
 
         ServiceReclamation serviceReclamation=new ServiceReclamation();
-
-
         serviceReclamation.create(rec);
+
+
+
+
 
 
 

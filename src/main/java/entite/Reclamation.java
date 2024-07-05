@@ -11,7 +11,7 @@ public class Reclamation {
     private LocalDateTime dateCreation;
     private LocalDateTime dateResolution;
 
-    // Constructeur
+    // Constructeur1 sans id ////////////////////////////////////////////
     public Reclamation( int utilisateurId,int commandeId, String description, StatutReclamation statut, LocalDateTime dateCreation, LocalDateTime dateResolution) {
         this.utilisateurId=utilisateurId;
         this.commandeId = commandeId;
@@ -20,7 +20,7 @@ public class Reclamation {
         this.dateCreation = dateCreation;
         this.dateResolution = dateResolution;
     }
-
+     //constructeur avec id ///////////////////////////////////////
     public Reclamation(int id,int utilisateurId, int commandeId, String description,  StatutReclamation statut, LocalDateTime dateCreation, LocalDateTime dateResolution) {
         this.id = id;
         this.commandeId = commandeId;
@@ -29,6 +29,13 @@ public class Reclamation {
         this.statut = statut;
         this.dateCreation = dateCreation;
         this.dateResolution = dateResolution;
+    }
+// constructeur reclamation iduser,idcommande ,text descrip
+
+    public Reclamation(int utilisateurId, int commandeId,String description) {
+        this.commandeId = commandeId;
+        this.description = description;
+        this.utilisateurId = utilisateurId;
     }
 
     // Getters et Setters

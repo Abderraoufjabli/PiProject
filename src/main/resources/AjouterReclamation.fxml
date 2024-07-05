@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="yellow-background" stylesheets="@AjouterReclamation.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterReclamation">
+
+    <children>
+        <Label layoutX="208.0" layoutY="24.0" text="Ajouter une réclamation" textFill="#221f1f">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+        <Label layoutX="16.0" layoutY="84.0" text="Identifient Client" />
+        <TextField fx:id="txtClient" layoutX="175.0" layoutY="80.0" />
+        <Label layoutX="17.0" layoutY="174.0" text="Description :" />
+        <TextArea fx:id="txtDescription" layoutX="180.0" layoutY="182.0" prefHeight="78.0" prefWidth="414.0" />
+        <Button layoutX="152.0" layoutY="331.0" mnemonicParsing="false" onAction="#AjouterReclamation" text="Ajouter" />
+      <Label layoutX="17.0" layoutY="125.0" prefHeight="51.0" prefWidth="149.0" text="Identifiant Commande" />
+      <Label layoutX="17.0" layoutY="275.0" text="Statut" />
+      <TextField fx:id="txtCommande" layoutX="179.0" layoutY="141.0" />
+      <TextField editable="false" layoutX="179.0" layoutY="292.0" styleClass="grey-text" text=" OUVERTE" />
+    </children>
+
+</AnchorPane>

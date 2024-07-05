@@ -38,7 +38,7 @@
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version> 0.0.8</version>
-                <configuration> <mainClass>set.MainFx</mainClass></configuration>
+                <configuration> <mainClass>test.MainFx</mainClass></configuration>
             </plugin>
         </plugins>
     </build>
