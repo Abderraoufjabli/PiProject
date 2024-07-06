@@ -7,7 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="yellow-background" stylesheets="@AjouterReclamation.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterReclamation">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="yellow-background"
+            stylesheets="@AjouterReclamation.css" xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AjouterReclamation">
 
     <children>
         <Label layoutX="208.0" layoutY="24.0" text="Ajouter une réclamation" textFill="#221f1f">

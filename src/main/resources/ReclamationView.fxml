@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReclamationView">
+    <children>
+    <TableView fx:id="tableView" layoutX="50.0" layoutY="50.0" prefHeight="300.0" prefWidth="500.0">
+        <columns>
+            <TableColumn text="ID">
+                <cellValueFactory>
+                    <javafx.scene.control.cell.PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Titre">
+                <cellValueFactory>
+                    <javafx.scene.control.cell.PropertyValueFactory property="titre" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Description">
+                <cellValueFactory>
+                    <javafx.scene.control.cell.PropertyValueFactory property="description" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+      <Button layoutX="425.0" layoutY="350.0" mnemonicParsing="false" onAction="#reclamationView" prefHeight="25.0" prefWidth="124.0" text="ReclamationView" />
+    </children>
+</AnchorPane>
