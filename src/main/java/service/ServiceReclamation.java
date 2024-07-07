@@ -172,27 +172,38 @@ public class ServiceReclamation implements IService<Reclamation> {
 
         @Override
         public List<Reclamation> readAll () {
-            List<Reclamation> recl = new ArrayList<Reclamation>();
+            List<Reclamation> recl = new ArrayList<>();
             String query = "select * from reclamations";
             try {
                 PreparedStatement pst = connection.prepareStatement(query);
                 ResultSet rs = pst.executeQuery();
 
                 while (rs.next()) {
-                    Reclamation reclamation = new Reclamation(rs.getInt("utilisateur_id"),
+                    // handle potentional null value for timestamps
+                    Timestamp dateCreationTimeStamp=rs.getTimestamp("date_creation");
+                    LocalDateTime dateCreation=null;
+                    if(dateCreationTimeStamp !=null){dateCreation=dateCreationTimeStamp.toLocalDateTime();};
+
+                    Timestamp dateResolutionTimestamp=rs.getTimestamp("date_resolution");
+                    LocalDateTime dateResolution=null;
+                    if(dateResolutionTimestamp !=null){dateResolution=dateResolutionTimestamp.toLocalDateTime();};
+
+                    Reclamation reclamation = new Reclamation(
                             rs.getInt("reclamation_id"),
+                            rs.getInt("utilisateur_id"),
                             rs.getInt("commande_id"),
                             rs.getString("description"),
-                            StatutReclamation.valueOf(rs.getString("status")),
-                            rs.getTimestamp("date_creation").toLocalDateTime(),
-                            rs.getTimestamp("date_resolution").toLocalDateTime());
+                            StatutReclamation.valueOf(rs.getString("statut")),
+                            dateCreation,
+                            dateResolution
+                    );
 
                     recl.add(reclamation);
 
                 }
 
             } catch (SQLException e) {
-                e.getMessage();
+                e.printStackTrace();
 
             }
             return recl;

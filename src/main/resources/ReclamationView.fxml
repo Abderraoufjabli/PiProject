@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReclamationView">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReclamationView">
     <children>
-    <TableView fx:id="tableView" layoutX="50.0" layoutY="50.0" prefHeight="300.0" prefWidth="500.0">
-        <columns>
-            <TableColumn text="ID">
+    <TableView fx:id="tableView" layoutX="1.0" layoutY="14.0" prefHeight="481.0" prefWidth="700.0" AnchorPane.leftAnchor="1.0">
+         <columns>
+             <TableColumn prefWidth="49.0" text="ID RECLAMATION">
+                 <cellValueFactory>
+                     <javafx.scene.control.cell.PropertyValueFactory property="id" />
+                 </cellValueFactory>
+             </TableColumn>
+
+            <TableColumn prefWidth="69.0" text="ID CLIENT">
+             <cellValueFactory>
+                 <javafx.scene.control.cell.PropertyValueFactory property="utilisateurId" />
+             </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="103.0" text="ID COMMANDE">
                 <cellValueFactory>
-                    <javafx.scene.control.cell.PropertyValueFactory property="id" />
+                    <javafx.scene.control.cell.PropertyValueFactory property="commandeId" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn text="Titre">
-                <cellValueFactory>
-                    <javafx.scene.control.cell.PropertyValueFactory property="titre" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn text="Description">
+            <TableColumn prefWidth="185.0" text="RECLAMATION">
                 <cellValueFactory>
                     <javafx.scene.control.cell.PropertyValueFactory property="description" />
                 </cellValueFactory>
             </TableColumn>
-        </columns>
+            <TableColumn prefWidth="103.0" text="DATE CREATION">
+                <cellValueFactory>
+                    <javafx.scene.control.cell.PropertyValueFactory property="dateCreation" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="119.0" text="DATE MISE A JOUR">
+                <cellValueFactory>
+                    <javafx.scene.control.cell.PropertyValueFactory property="dateResolution" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="63.0" text="STATUT">
+                <cellValueFactory>
+                    <javafx.scene.control.cell.PropertyValueFactory property="statut" />
+                </cellValueFactory>
+            </TableColumn>
+             
+         </columns>
     </TableView>
-      <Button layoutX="425.0" layoutY="350.0" mnemonicParsing="false" onAction="#reclamationView" prefHeight="25.0" prefWidth="124.0" text="ReclamationView" />
     </children>
 </AnchorPane>
