@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.collections.FXCollections?>
+
+<?import java.lang.String?>
+<AnchorPane prefHeight="600.0" prefWidth="600.0" styleClass="yellow-background"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.RepondreReclamation">
+
+    <children>
+        <Label layoutX="208.0" layoutY="24.0" text="Répondre à une réclamation">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="16.0" layoutY="84.0" text="Réclamation ID" />
+        <TextField fx:id="txtReclamationId" layoutX="175.0" layoutY="80.0" />
+
+        <Label layoutX="16.0" layoutY="134.0" text="Identifiant Commande" />
+        <TextField fx:id="txtCommandeId" layoutX="175.0" layoutY="130.0" />
+
+        <Label layoutX="16.0" layoutY="184.0" text="Identifiant Utilisateur" />
+        <TextField fx:id="txtUtilisateurId" layoutX="175.0" layoutY="180.0" />
+
+        <Label layoutX="16.0" layoutY="234.0" text="Réponse :" />
+        <TextArea fx:id="txtReponse" layoutX="180.0" layoutY="230.0" prefHeight="78.0" prefWidth="414.0" />
+
+        <Label layoutX="16.0" layoutY="334.0" text="Statut" />
+        <ComboBox fx:id="comboStatut" layoutX="180.0" layoutY="330.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="OUVERTE" />
+                    <String fx:value="EN_COURS" />
+                    <String fx:value="RESOLUE" />
+                    <String fx:value="ANNULEE" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Button layoutX="152.0" layoutY="480.0" mnemonicParsing="false" onAction="#repondreReclamation" text="Répondre" />
+    </children>
+</AnchorPane>

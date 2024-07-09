@@ -21,12 +21,8 @@ public class Main {
 
         ServiceReclamation serviceReclamation=new ServiceReclamation();
 
-        List<Reclamation> record=serviceReclamation.readAll();
-
-        for(Reclamation r:record)
-        {
-            System.out.println(r);
-        }
+        Reclamation rec=new Reclamation(10,15,21,"c'est pas bon",StatutReclamation.EN_COURS);
+        serviceReclamation.update(rec);
 
 
 

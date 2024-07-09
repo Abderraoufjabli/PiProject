@@ -10,6 +10,7 @@ public class Reclamation {
     private StatutReclamation statut;
     private LocalDateTime dateCreation;
     private LocalDateTime dateResolution;
+    private String reponse;
 
     // Constructeur1 sans id ////////////////////////////////////////////
     public Reclamation( int utilisateurId,int commandeId, String description, StatutReclamation statut, LocalDateTime dateCreation, LocalDateTime dateResolution) {
@@ -32,10 +33,26 @@ public class Reclamation {
     }
 // constructeur reclamation iduser,idcommande ,text descrip
 
-    public Reclamation(int utilisateurId, int commandeId,String description) {
+    public String getReponse() {
+        return reponse;
+    }
+
+    public void setReponse(String reponse) {
+        this.reponse = reponse;
+    }
+
+    public Reclamation(int utilisateurId, int commandeId, String description) {
         this.commandeId = commandeId;
         this.description = description;
         this.utilisateurId = utilisateurId;
+    }
+
+    public Reclamation(int id,int commandeId,int utilisateurId,String reponse,StatutReclamation statut)
+    {
+        this.utilisateurId=utilisateurId;
+        this.commandeId=commandeId;
+        this.reponse=reponse;
+        this.statut=statut;
     }
 
     // Getters et Setters

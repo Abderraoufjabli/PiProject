@@ -143,32 +143,33 @@ public class ServiceReclamation implements IService<Reclamation> {
 ///////////////////debut methode update //////////////////////////
 
         @Override
-        public void update (Reclamation reclamation){
-
-            String query = "update reclamations SET utilisateur_id=?, commande_id=?," +
-                    " description=?, statut=?, date_creation=?, date_resolution=?" +
-                    " where reclamation_id=?";
+        public void update(Reclamation reclamation) {
+            String query = "UPDATE reclamations SET commande_id=?, utilisateur_id=?, reponse=?, statut=? WHERE reclamation_id=?";
 
             try {
                 PreparedStatement pst = connection.prepareStatement(query);
 
-                pst.setInt(1, reclamation.getUtilisateurId());
-                pst.setInt(2, reclamation.getCommandeId());
-                pst.setString(3, reclamation.getDescription());
+                pst.setInt(1, reclamation.getCommandeId());
+                pst.setInt(2, reclamation.getUtilisateurId());
+                pst.setString(3, reclamation.getReponse());
                 pst.setString(4, reclamation.getStatut().toString());
-                pst.setTimestamp(5, Timestamp.valueOf(reclamation.getDateCreation()));
-                pst.setTimestamp(6, Timestamp.valueOf(reclamation.getDateResolution()));
-                pst.setInt(7, reclamation.getId());
-                pst.executeUpdate();
+                pst.setInt(5, reclamation.getId());
+                System.out.println(reclamation.getStatut().toString());
 
-
+                int rowsUpdated = pst.executeUpdate();
+                if (rowsUpdated > 0) {
+                    System.out.println("Réclamation mise à jour avec succès.");
+                } else {
+                    System.out.println("Échec de la mise à jour de la réclamation.");
+                }
             } catch (SQLException e) {
-                e.getMessage();
+                System.err.println("Erreur lors de la mise à jour de la réclamation : " + e.getMessage());
+                e.printStackTrace();
             }
-
         }
 
-        ///////////////////////////////////debut methode readAll/////////////////
+
+    ///////////////////////////////////debut methode readAll/////////////////
 
         @Override
         public List<Reclamation> readAll () {

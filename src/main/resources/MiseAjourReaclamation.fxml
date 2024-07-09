@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.MiseAjourReaclamation"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Label text="Commande ID:" layoutX="20" layoutY="20"/>
+        <TextArea fx:id="commandeIdField" layoutX="150" layoutY="20" prefHeight="25" prefWidth="200"/>
+
+        <Label text="Description:" layoutX="20" layoutY="60"/>
+        <TextArea fx:id="descriptionField" layoutX="150" layoutY="60" prefHeight="50" prefWidth="200"/>
+
+        <Label text="Utilisateur ID:" layoutX="20" layoutY="130"/>
+        <TextArea fx:id="utilisateurIdField" layoutX="150" layoutY="130" prefHeight="25" prefWidth="200"/>
+
+        <Label text="Statut:" layoutX="20" layoutY="170"/>
+        <ComboBox fx:id="statutComboBox" layoutX="150" layoutY="170" prefWidth="200">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="OUVERT"/>
+                    <String fx:value="FERMÉ"/>
+                    <String fx:value="EN_COURS"/>
+                    <String fx:value="RÉSOLU"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label text="Date de Création:" layoutX="20" layoutY="210"/>
+        <DatePicker fx:id="dateCreationPicker" layoutX="150" layoutY="210" prefWidth="200"/>
+
+        <Label text="Date de Résolution:" layoutX="20" layoutY="250"/>
+        <DatePicker fx:id="dateResolutionPicker" layoutX="150" layoutY="250" prefWidth="200"/>
+
+        <Button text="Enregistrer" layoutX="70" layoutY="300" onAction="#handleSaveAction"/>
+        <Button text="Annuler" layoutX="200" layoutY="300" onAction="#handleCancelAction"/>
+    </children>
+
+</AnchorPane>

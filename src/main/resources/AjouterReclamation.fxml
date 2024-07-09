@@ -21,7 +21,7 @@
         <TextField fx:id="txtClient" layoutX="175.0" layoutY="80.0" />
         <Label layoutX="17.0" layoutY="174.0" text="Description :" />
         <TextArea fx:id="txtDescription" layoutX="180.0" layoutY="182.0" prefHeight="78.0" prefWidth="414.0" />
-        <Button layoutX="152.0" layoutY="331.0" mnemonicParsing="false" onAction="#AjouterReclamation" text="Ajouter" />
+        <Button layoutX="152.0" layoutY="331.0" mnemonicParsing="false" onAction="#ajouterReclamation" text="Ajouter" />
       <Label layoutX="17.0" layoutY="125.0" prefHeight="51.0" prefWidth="149.0" text="Identifiant Commande" />
       <Label layoutX="17.0" layoutY="275.0" text="Statut" />
       <TextField fx:id="txtCommande" layoutX="179.0" layoutY="141.0" />

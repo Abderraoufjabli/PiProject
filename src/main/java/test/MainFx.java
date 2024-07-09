@@ -17,14 +17,14 @@ public class MainFx extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        URL url=getClass().getResource("../ReclamationView.fxml");
+        URL url=getClass().getResource("../AjouterReclamation.fxml");
         FXMLLoader loader=new FXMLLoader(url);
 
         try {
             Parent root=loader.load();
             Scene scene=new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Reclamation View");
+            primaryStage.setTitle("Ajouter Reclamation");
             primaryStage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
