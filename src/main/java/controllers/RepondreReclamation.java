@@ -2,6 +2,7 @@ package controllers;
 
 import entite.Reclamation;
 import entite.StatutReclamation;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
@@ -9,8 +10,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import javafx.collections.FXCollections;
+import service.EmailSender;
 import service.ServiceReclamation;
 
+import javax.mail.MessagingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -116,5 +119,20 @@ public class RepondreReclamation {
         comboStatut.getSelectionModel().clearSelection();
     }
 
-    // Vous pouvez ajouter d'autres méthodes de gestion des événements ou d'initialisation ici si nécessaire
+    public void sendEmail(ActionEvent actionEvent) {
+
+        String utilisateurId = txtUtilisateurId.getText();
+        String reponse = txtReponse.getText();
+        String statut = comboStatut.getValue();
+
+        // Use EmailSender service to send email
+        EmailSender emailSender = new EmailSender("idetectt@gmail.com","mmzm bzki tflr evos");
+        try {
+            emailSender.sendEmail("idetectt@gmail.com", statut, reponse);
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 }

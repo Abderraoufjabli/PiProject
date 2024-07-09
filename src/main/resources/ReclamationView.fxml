@@ -4,49 +4,59 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReclamationView">
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="600.0" prefWidth="800.0"  stylesheets="@ReclamationView.css" styleClass="main-pane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReclamationView">
     <children>
-    <TableView fx:id="tableView" layoutX="1.0" layoutY="14.0" prefHeight="481.0" prefWidth="700.0" AnchorPane.leftAnchor="1.0">
-         <columns>
-             <TableColumn prefWidth="49.0" text="ID RECLAMATION">
-                 <cellValueFactory>
-                     <javafx.scene.control.cell.PropertyValueFactory property="id" />
-                 </cellValueFactory>
-             </TableColumn>
+        <VBox alignment="CENTER" spacing="20" layoutX="50.0" layoutY="50.0">
+            <ImageView fitHeight="150.0" fitWidth="150.0" preserveRatio="true">
+                <!-- Set your image path here -->
+                <image>
+                    <Image url="@/image/reclamation.jpg"/>
+                </image>
+            </ImageView>
 
-            <TableColumn prefWidth="69.0" text="ID CLIENT">
-             <cellValueFactory>
-                 <javafx.scene.control.cell.PropertyValueFactory property="utilisateurId" />
-             </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="103.0" text="ID COMMANDE">
-                <cellValueFactory>
-                    <javafx.scene.control.cell.PropertyValueFactory property="commandeId" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="185.0" text="RECLAMATION">
-                <cellValueFactory>
-                    <javafx.scene.control.cell.PropertyValueFactory property="description" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="103.0" text="DATE CREATION">
-                <cellValueFactory>
-                    <javafx.scene.control.cell.PropertyValueFactory property="dateCreation" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="119.0" text="DATE MISE A JOUR">
-                <cellValueFactory>
-                    <javafx.scene.control.cell.PropertyValueFactory property="dateResolution" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="63.0" text="STATUT">
-                <cellValueFactory>
-                    <javafx.scene.control.cell.PropertyValueFactory property="statut" />
-                </cellValueFactory>
-            </TableColumn>
-             
-         </columns>
-    </TableView>
+            <TableView fx:id="tableView" prefHeight="400.0" prefWidth="900.0">
+                <columns>
+                    <TableColumn prefWidth="100.0" text="ID Reclamation">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="id" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="100.0" text="ID Client">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="utilisateurId" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="100.0" text="ID Commande">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="commandeId" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="200.0" text="Reclamation">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="description" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="100.0" text="Date Creation">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="dateCreation" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="150.0" text="Date Mise a Jour">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="dateResolution" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="50.0" text="Statut">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="statut" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </VBox>
     </children>
 </AnchorPane>

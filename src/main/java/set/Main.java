@@ -4,9 +4,11 @@ import entite.Livraison;
 import entite.Reclamation;
 import entite.StatutLivraison;
 import entite.StatutReclamation;
+import service.EmailSender;
 import service.ServiceLivraison;
 import service.ServiceReclamation;
 
+import javax.mail.MessagingException;
 import java.sql.SQLException;
 import java.sql.SQLOutput;
 import java.sql.Timestamp;
@@ -17,12 +19,10 @@ import java.util.List;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, MessagingException {
 
-        ServiceReclamation serviceReclamation=new ServiceReclamation();
-
-        Reclamation rec=new Reclamation(10,15,21,"c'est pas bon",StatutReclamation.EN_COURS);
-        serviceReclamation.update(rec);
+        EmailSender emailSender=new EmailSender("idetectt@gmail.com","mmzm bzki tflr evos");
+        emailSender.sendEmail("idetectt@gmail.com","reponse a la reclamation","this the first api");
 
 
 

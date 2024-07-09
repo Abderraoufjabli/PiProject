@@ -1,0 +1,33 @@
+/* styles.css */
+.menu-button {
+    -fx-background-color: #0078D7;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #005A9E;
+    -fx-border-width: 1px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #005A9E;
+}
+
+.menu-button:pressed {
+    -fx-background-color: #004080;
+}
+
+.menu-button:focused {
+    -fx-background-color: #0078D7;
+    -fx-border-color: #004080;
+}
+
+VBox {
+    -fx-padding: 20px;
+    -fx-background-color: #F4F4F4;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}

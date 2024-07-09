@@ -1,0 +1,42 @@
+/* styles.css */
+
+/* Style de l'AnchorPane */
+.anchor-pane {
+    -fx-background-color: #F5F5F5; /* Beige clair */
+}
+
+/* Style de la TableView et ses éléments */
+.table-view {
+    -fx-background-color: #FFFFFF; /* Fond de la TableView */
+    -fx-border-color: #DDDDDD; /* Bordure gris clair */
+    -fx-border-width: 1px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #333333; /* Fond de l'en-tête */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-font-weight: bold; /* Police en gras */
+    -fx-font-size: 14px; /* Taille de la police */
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #FFFFFF; /* Couleur de fond des lignes */
+    -fx-text-fill: #333333; /* Couleur du texte */
+    -fx-font-size: 14px; /* Taille de la police */
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #F2F2F2; /* Couleur de fond des lignes impaires */
+}
+
+.table-view .table-cell {
+    -fx-alignment: center-left; /* Alignement du texte dans la cellule */
+}
+
+.table-view .column-id {
+    -fx-pref-width: 100px; /* Largeur pour les colonnes ID */
+}
+
+.table-view .column-date {
+    -fx-pref-width: 150px; /* Largeur pour les colonnes de date */
+}
