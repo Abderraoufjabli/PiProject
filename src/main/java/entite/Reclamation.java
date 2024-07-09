@@ -53,6 +53,16 @@ public class Reclamation {
         this.commandeId=commandeId;
         this.reponse=reponse;
         this.statut=statut;
+        this.id=id;
+    }
+
+
+    public Reclamation(int id,int commandeId,int utilisateurId,String reponse)
+    {
+        this.utilisateurId=utilisateurId;
+        this.commandeId=commandeId;
+        this.reponse=reponse;
+
     }
 
     // Getters et Setters

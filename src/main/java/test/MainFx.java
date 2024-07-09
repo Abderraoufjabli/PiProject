@@ -17,7 +17,7 @@ public class MainFx extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        URL url=getClass().getResource("../AjouterReclamation.fxml");
+        URL url=getClass().getResource("../MainFxml.fxml");
         FXMLLoader loader=new FXMLLoader(url);
 
         try {

@@ -154,7 +154,13 @@ public class ServiceReclamation implements IService<Reclamation> {
                 pst.setString(3, reclamation.getReponse());
                 pst.setString(4, reclamation.getStatut().toString());
                 pst.setInt(5, reclamation.getId());
-                System.out.println(reclamation.getStatut().toString());
+
+                // Afficher les valeurs des colonnes
+                System.out.println("Commande ID: " + reclamation.getCommandeId());
+                System.out.println("Utilisateur ID: " + reclamation.getUtilisateurId());
+                System.out.println("Réponse: " + reclamation.getReponse());
+                System.out.println("Statut: " + reclamation.getStatut().toString());
+                System.out.println("Reclamation ID: " + reclamation.getId());
 
                 int rowsUpdated = pst.executeUpdate();
                 if (rowsUpdated > 0) {
@@ -167,6 +173,8 @@ public class ServiceReclamation implements IService<Reclamation> {
                 e.printStackTrace();
             }
         }
+
+
 
 
     ///////////////////////////////////debut methode readAll/////////////////

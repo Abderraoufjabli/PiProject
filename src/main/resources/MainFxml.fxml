@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.MainController"
+      alignment="CENTER"
+      spacing="20">
+
+    <Button text="Afficher Réclamations" onAction="#afficherReclamations"/>
+    <Button text="Ajouter Réclamation" onAction="#ajouterReclamations"/>
+    <Button text="Répondre à une Réclamation" onAction="#repondreReclamations"/>
+
+</VBox>
